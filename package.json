@@ -12,7 +12,12 @@
     "fastify-static": "^4.0.0",
     "handlebars": "^4.7.7",
     "point-of-view": "^4.14.0",
-    "body-parser": "*"
+    "express": "*",
+    "body-parser": "*",
+    "dialogflow-fulfillment": "*",
+    "mysql": "*", 
+      "body-parser":"1.18.3",
+      "joi": "14.3.1"
   },
   "engines": {
     "node": "12.x"
