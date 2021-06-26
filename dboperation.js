@@ -1,5 +1,5 @@
 var config = require("./dbconfig");
-const sql = require("mssql");
+const sql = require("mysql");
  
 async function getdata() {
   try {
@@ -9,7 +9,6 @@ async function getdata() {
 console.log(" mathus-error :" + error);
   }
 }
- 
 
 async function getdata_withQuery() {
     try {
@@ -21,7 +20,53 @@ async function getdata_withQuery() {
     }
   }
   
+async function getdata_withQuery() {
+    try {
+      let pool = await sql.connect(config);
+      let res = await pool.request().query("SELECT *  FROM production.products");
+      return res.recordsets;
+    } catch (error) {
+      console.log(" mathus-error :" + error);
+    }
+  }
 
+async function getdata_withQuery() {
+    try {
+      let pool = await sql.connect(config);
+      let res = await pool.request().query("SELECT *  FROM production.products");
+      return res.recordsets;
+    } catch (error) {
+      console.log(" mathus-error :" + error);
+    }
+  }
+
+async function getdata_withQuery() {
+    try {
+      let pool = await sql.connect(config);
+      let res = await pool.request().query("SELECT *  FROM production.products");
+      return res.recordsets;
+    } catch (error) {
+      console.log(" mathus-error :" + error);
+    }
+  }
+async function getdata_withQuery() {
+    try {
+      let pool = await sql.connect(config);
+      let res = await pool.request().query("SELECT *  FROM production.products");
+      return res.recordsets;
+    } catch (error) {
+      console.log(" mathus-error :" + error);
+    }
+  }
+async function getdata_withQuery() {
+    try {
+      let pool = await sql.connect(config);
+      let res = await pool.request().query("SELECT *  FROM production.products");
+      return res.recordsets;
+    } catch (error) {
+      console.log(" mathus-error :" + error);
+    }
+  }
 module.exports = {
   getdata: getdata,
   getdata_withQuery:getdata_withQuery

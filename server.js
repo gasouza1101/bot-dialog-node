@@ -5,7 +5,7 @@ const mysql = require("mysql");
 const Joi = require("joi");
 var intentName = "";
 var router = express.Router();
-const sql = require("dboperation");
+const sql = require("./dboperation");
 
 app.use(bodyParser.json()); //suporta corpo de mensagem/requisição em Json
 app.use(
