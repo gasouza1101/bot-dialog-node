@@ -42,35 +42,44 @@ async function getDataRealizadoCotaVendedor() {
     }
   }
 
+ // INFORMAÇÕES DE VENDAS X COTA POR UNIDADE DE NEGÓCIO E REGIONAL YTD e Mês ----- INTENÇÃO 4 
+async function getDataVendaPorRegionalEUnidade() {
+    try {
+      let pool = await sql.connect(config);
+      let res = await pool.request().query("SELECT GRUPOMERCADO ,REGIONAL ,ANO ,MES ,SUM(VALORLIQUIDO_COTA) AS VALORLIQUIDO_COTA ,SUM(VALORLIQUIDO) AS VALORLIQUIDO FROM TB_VENDAS GROUP BY GRUPOMERCADO ,REGIONAL ,ANO ,MES");
+      return res.recordsets;
+    } catch (error) {
+      console.log("Erro intent 4:" + error);
+    }
+  }
 
-async function getdata_withQuery() {
+ // INFORMAÇÕES DE VENDAS X COTA POR UNIDADE DE NEGÓCIO E REGIONAL YTD e Mês ----- INTENÇÃO 5
+async function getDataRealizadoPorRegional() {
     try {
       let pool = await sql.connect(config);
-      let res = await pool.request().query("SELECT *  FROM production.products");
+      let res = await pool.request().query("SELECT GRUPOMERCADO ,REGIONAL ,ANO ,MES ,SUM(VALORLIQUIDO_COTA) AS VALORLIQUIDO_COTA ,SUM(VALORLIQUIDO) AS VALORLIQUIDO FROM TB_VENDAS GROUP BY REGIONAL ,ANO ,MES");
       return res.recordsets;
     } catch (error) {
-      console.log(" mathus-error :" + error);
+      console.log("Erro intent 5:" + error);
     }
   }
-async function getdata_withQuery() {
+ // REALIZADO PARA O CLIENTE EM UM DETERMINADO PERÍODO ---- INTENÇÃO 12
+async function getDataVendaPorRegional() {
     try {
       let pool = await sql.connect(config);
-      let res = await pool.request().query("SELECT *  FROM production.products");
+      let res = await pool.request().query("SELECT GRUPOMERCADO ,REGIONAL ,VENDEDOR ,Cliente ,ANO ,MES ,SUM(VALORLIQUIDO) AS VALORLIQUIDO FROM TB_VENDAS GROUP BY GRUPOMERCADO ,REGIONAL ,VENDEDOR ,Cliente ,ANO ,MES");
       return res.recordsets;
     } catch (error) {
-      console.log(" mathus-error :" + error);
+      console.log("Erro intent 12:" + error);
     }
   }
-async function getdata_withQuery() {
-    try {
-      let pool = await sql.connect(config);
-      let res = await pool.request().query("SELECT *  FROM production.products");
-      return res.recordsets;
-    } catch (error) {
-      console.log(" mathus-error :" + error);
-    }
-  }
+
 module.exports = {
   getdata: getdata,
-  getdata_withQuery:getdata_withQuery
+  getDataVendaPorRegional:getDataVendaPorRegional,
+  getDataRealizadoPorRegional
+  getDataVendaPorRegionalEUnidade
+  getDataRealizadoCotaVendedor
+  getDataRealizadoCotaVendedorEProduto:
+  getDataInfEstoque:
 };
