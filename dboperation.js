@@ -77,9 +77,9 @@ async function getDataVendaPorRegional() {
 module.exports = {
   getdata: getdata,
   getDataVendaPorRegional:getDataVendaPorRegional,
-  getDataRealizadoPorRegional
-  getDataVendaPorRegionalEUnidade
-  getDataRealizadoCotaVendedor
-  getDataRealizadoCotaVendedorEProduto:
-  getDataInfEstoque:
+  getDataRealizadoPorRegional:getDataRealizadoPorRegional,
+  getDataVendaPorRegionalEUnidade:getDataVendaPorRegionalEUnidade,
+  getDataRealizadoCotaVendedor:getDataRealizadoCotaVendedor,
+  getDataRealizadoCotaVendedorEProduto:getDataRealizadoCotaVendedorEProduto,
+  getDataInfEstoque:getDataInfEstoque,
 };
