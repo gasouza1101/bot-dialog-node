@@ -6,9 +6,13 @@ const config = {
   options: {
     trustedconnection: true,
     enableArithAbort: true,
-    instancename
-  }
-}
+    instancename: "",
+  },
+  port: 1433
+};
+
+module.export = config;
+
 //  IP: 187.109.40.139
 // Porta: 1433
 // Usuário: rdaccess

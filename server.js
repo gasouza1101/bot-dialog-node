@@ -12,9 +12,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 
+
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
-
 //configuração para mandar para o webhook, obedecendo a documentação do dialogflow, devem ser enviadas requisições com post pelo webhook
 //para serem trratadas pela aplicação. O padrão configurado pelo nosso bodyparser é JSON, assim como o formato que o dialogflow recebe
 app.post('/webhookdflow', function(request, response) {
