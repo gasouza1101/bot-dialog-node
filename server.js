@@ -35,7 +35,7 @@ app.post('/webhookdflow', function(request, response) {
   var result         
   
   //mapeamento de intents
-  if (intentName == "processo.seletivo")
+  if (intentName == "welcome.intent")
   {
     values = [
       "Processo seletivo",//título do cartão
